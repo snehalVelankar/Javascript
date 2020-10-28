@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td {
+  border: 2px solid black;
+}
+</style>
+</head>
+<body>
+
+
+<table id="myTable">
+  <tr>
+    <td>#</td>
+    <td>Name</td>
+    <td>Age</td>
+    <td>Gender</td>
+    <td>Actions</td> 
+  </tr>
+  <tr>
+    <td>1</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<br>
+
+<td class="dropdown">
+  <form action="" name="Gender">
+      <select name="Gender" >
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+       </select>
+
+
+       Name: <input type="text" id="myName" placeholder="Name">
+       Age: <input type="text" id="myAge" placeholder="Age">
+
+       <table id="delete">
+        <tr>
+          <td>Row 1</td>
+          <td><input type="button" value="-" onclick="deleteRow(this)"></td>
+        </tr>
+        <tr>
+          <td>Row 2</td>
+          <td><input type="button" value="-" onclick="deleteRow(this)"></td>
+        </tr>
+        <tr>
+          <td>Row 3</td>
+          <td><input type="button" value="-" onclick="deleteRow(this)"></td>
+        </tr>
+      </table>
+
+
+
+<button type="button" onclick="myFunction()">+</button>
+
+
+
+<script>
+function myFunction() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(0);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  var cell5 = row.insertCell(4);
+  cell1.innerHTML = "";
+  cell2.innerHTML = "";
+  cell3.innerHTML = "";
+  cell4.innerHTML = "";
+  cell5.innerHTML = "";
+  var x = document.getElementById("myName").placeholder;
+  var x = document.getElementById("myAge").placeholder;
+}
+
+function deleteRow(r) {
+  var i = r.parentNode.parentNode.rowIndex;
+  document.getElementById("delete").deleteRow(i);
+}
+
+</script>
+
+</body>
+</html>
